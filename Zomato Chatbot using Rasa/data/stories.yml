@@ -1,0 +1,498 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+    - location: Kashmir
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - location: Kashmir
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - action: utter_ask_location_again
+  - intent: goodbye
+    entities:
+    - goodbye: ok thanks
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: Kolkata
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: Kolkata
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: utter_ask_budget
+  - intent: tell_budget
+    entities:
+    - budget: high
+  - slot_was_set:
+    - budget: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Kolkata
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: xxx@gmail.com
+  - slot_was_set:
+    - email: xxx@gmail.com
+  - action: action_send_email
+  - slot_was_set:
+    - flag_email_sent: true
+  - action: utter_email_sent
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: Noida
+  - slot_was_set:
+    - location: Noida
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: utter_ask_budget
+  - intent: tell_budget
+    entities:
+    - budget: medium
+  - slot_was_set:
+    - budget: medium
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Noida
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: xxx@gmail.com
+  - slot_was_set:
+    - email: xxx@gmail.com
+  - action: action_send_email
+  - slot_was_set:
+    - flag_email_sent: true
+  - action: utter_email_sent
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: faridabad
+  - slot_was_set:
+    - location: faridabad
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: utter_ask_budget
+  - intent: tell_budget
+    entities:
+    - budget: low
+  - slot_was_set:
+    - budget: low
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: faridabad
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: xxx@gmail.com
+  - slot_was_set:
+    - email: xxx@gmail.com
+  - action: action_send_email
+  - slot_was_set:
+    - flag_email_sent: true
+  - action: utter_email_sent
+  - intent: goodbye
+    entities:
+    - goodbye: oh great thanks a lot
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: Shimla
+  - slot_was_set:
+    - location: Shimla
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: utter_ask_budget
+  - intent: tell_budget
+    entities:
+    - budget: high
+  - slot_was_set:
+    - budget: high
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Shimla
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: low
+    - cuisine: american
+    - location: Shimla
+  - slot_was_set:
+    - budget: low
+  - slot_was_set:
+    - cuisine: american
+  - slot_was_set:
+    - location: Shimla
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Shimla
+  - slot_was_set:
+    - restaurant_found_flag: false
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+
+- story: interactive_story_2
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: high
+  - slot_was_set:
+    - budget: high
+  - action: utter_ask_location
+  - intent: restaurant_search
+
+- story: interactive_story_3
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: high
+  - slot_was_set:
+    - budget: high
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Allahabad
+  - slot_was_set:
+    - location: Allahabad
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Allahabad
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: xxx@gmail.com
+  - slot_was_set:
+    - email: xxx@gmail.com
+  - action: action_send_email
+  - slot_was_set:
+    - flag_email_sent: true
+  - action: utter_email_sent
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: Chennai
+  - slot_was_set:
+    - location: Chennai
+
+- story: interactive_story_2
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: low
+    - location: Chennai
+  - slot_was_set:
+    - budget: low
+  - slot_was_set:
+    - location: Chennai
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chennai
+  - slot_was_set:
+    - restaurant_found_flag: false
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: medium
+  - slot_was_set:
+    - budget: medium
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: New Delhi
+  - slot_was_set:
+    - location: New Delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: New Delhi
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: high
+    - cuisine: chinese
+    - location: Kolkata
+  - slot_was_set:
+    - budget: high
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: Kolkata
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Kolkata
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: high
+    - cuisine: american
+    - location: imphal
+  - slot_was_set:
+    - budget: high
+  - slot_was_set:
+    - cuisine: american
+  - slot_was_set:
+    - location: imphal
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - action: utter_ask_location_again
+  - intent: restaurant_search
+    entities:
+    - location: jodhpur
+  - slot_was_set:
+    - location: jodhpur
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - action: utter_ask_location_again
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+    - location: Pune
+    - budget: medium
+  - slot_was_set:
+    - budget: medium
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - location: Pune
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Pune
+  - slot_was_set:
+    - restaurant_found_flag: false
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: medium
+    - location: Mumbai
+    - cuisine: chinese
+  - slot_was_set:
+    - budget: medium
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: Mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Mumbai
+  - slot_was_set:
+    - restaurant_found_flag: false
+  - intent: goodbye
+    entities:
+    - goodbye: thnx
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: Agra
+  - slot_was_set:
+    - location: Agra
+  - action: action_check_location
+  - slot_was_set:
+    - location_flag: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_check_cuisine
+  - slot_was_set:
+    - cuisine_flag: true
+  - action: utter_ask_budget
+  - intent: tell_budget
+    entities:
+    - budget: medium
+  - slot_was_set:
+    - budget: medium
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Agra
+  - slot_was_set:
+    - restaurant_found_flag: true
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: send_email
+    entities:
+    - email: xxx@gmail.com
+  - slot_was_set:
+    - email: xxx@gmail.com
+  - action: action_send_email
+  - slot_was_set:
+    - flag_email_sent: true
+  - action: utter_email_sent
+  - intent: goodbye
+    entities:
+    - goodbye: great
+    - goodbye: lot
+  - action: utter_goodbye

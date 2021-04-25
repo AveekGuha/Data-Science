@@ -1,0 +1,101 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - Hi I am hungry
+- intent: restaurant_search
+  examples: |
+    - show me [Italian](cuisine) restaurants at [Kashmir](location)
+    - show me [chinese](cuisine) restaurants at [Calcutta]{"entity": "location", "value": "Kolkata"}
+    - show me restaurants at [Noida](location)
+    - [American](cuisine)
+    - find me restaurants
+    - [faridabad](location)
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - show me restaurants at [simla]{"entity": "location", "value": "Shimla"}
+    - [Italian](cuisine)
+    - find me [affordable]{"entity": "budget", "value": "low"} [american](cuisine) restaurant at [Shimla](location)
+    - show me affluent restaurants
+    - show me [hifi]{"entity": "budget", "value": "high"} restaurants
+    - Prayagraj
+    - [Allahabad](location)
+    - [North Indian](cuisine)
+    - find afforadble restaurants at [Chennai](location)
+    - find [affordable]{"entity": "budget", "value": "low"} restauarnts at [Chennai](location)
+    - [South Indian](cuisine)
+    - find me [decent]{"entity": "budget", "value": "medium"} restauarnt
+    - [Delhi]{"entity": "location", "value": "New Delhi"}
+    - [lux]{"entity": "budget", "value": "high"} [chinese](cuisine) [calcutta]{"entity": "location", "value": "Kolkata"}
+    - [fancy]{"entity": "budget", "value": "high"} [american](cuisine) [imphal](location)
+    - [jodhpur](location)
+    - [italian]{"entity": "cuisine", "value": "Italian"} [pune]{"entity": "location", "value": "Pune"} [medium](budget)
+    - [average]{"entity": "budget", "value": "medium"} [bombay]{"entity": "location", "value": "Mumbai"} [chinese](cuisine)
+    - [Agra](location)
+    - [North Indian](cuisine)
+- intent: goodbye
+  examples: |
+    - [ok thanks](goodbye)
+    - thanks bye
+    - [oh great thanks a lot](goodbye)
+    - oh ok no issues thanks
+    - ok thanks
+    - [thnx](goodbye)
+    - [great](goodbye) thanks a [lot](goodbye)
+- intent: tell_budget
+  examples: |
+    - [More than Rs. 700]{"entity": "budget", "value": "high"}
+    - [Between Rs. 300 to 700]{"entity": "budget", "value": "medium"}
+    - [Less than Rs. 300]{"entity": "budget", "value": "low"}
+    - [Between Rs. 300 to 700]{"entity": "budget", "value": "medium"}
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - sure
+- intent: send_email
+  examples: |
+    - [xxx@gmail.com](email)
+    - [xxx@gmail.com](email)
+- intent: deny
+  examples: |
+    - nah
+    - no
+    - don't
+- synonym: Kolkata
+  examples: |
+    - Calcutta
+    - calcutta
+- synonym: chinese
+  examples: |
+    - Chinese
+- synonym: Shimla
+  examples: |
+    - simla
+- synonym: low
+  examples: |
+    - affordable
+    - Less than Rs. 300
+- synonym: high
+  examples: |
+    - hifi
+    - lux
+    - fancy
+    - More than Rs. 700
+- synonym: medium
+  examples: |
+    - decent
+    - average
+    - Between Rs. 300 to 700
+- synonym: New Delhi
+  examples: |
+    - Delhi
+- synonym: Italian
+  examples: |
+    - italian
+- synonym: Pune
+  examples: |
+    - pune
+- synonym: Mumbai
+  examples: |
+    - bombay
