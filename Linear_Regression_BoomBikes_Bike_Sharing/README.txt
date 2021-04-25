@@ -24,6 +24,6 @@ You are required to model the demand for shared bikes with the available indepen
 
 Contributor : Aveek Guha
 
-Date : 14th Sept 2020
+Date        : 14th Sept 2020
 
 *** Download and open the .ipynb file in jupyter notebook
