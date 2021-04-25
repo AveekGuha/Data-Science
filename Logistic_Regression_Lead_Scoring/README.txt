@@ -19,3 +19,6 @@ X Education has appointed you to help them select the most promising leads, i.e.
 Contributors : Aveek Guha & Anurag Soni (sonianurag39@gmail.com)
 
 Date         : 27th Oct 2020
+
+
+*** Download and open the .ipynb file in jupyter notebook
