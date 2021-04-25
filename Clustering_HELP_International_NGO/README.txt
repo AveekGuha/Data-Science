@@ -15,3 +15,5 @@ And this is where you come in as a data analyst. Your job is to categorise the c
 Contributor : Aveek Guha
 
 Date	    : 19th Oct 2020
+
+*** Download and open the .ipynb file in jupyter notebook
